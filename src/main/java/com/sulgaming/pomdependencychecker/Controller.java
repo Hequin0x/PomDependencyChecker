@@ -74,6 +74,8 @@ public class Controller {
 
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException, XmlPullParserException {
+        this.dependencyChecks.clear();
+
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Pom File");
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("XML Files(*.xml)", "*.xml"));
