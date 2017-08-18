@@ -3,7 +3,7 @@ PomDependencyChecker
 
 Pom Dependency Checker is a tool, to verify if maven dependencies present in your pom.xml file are up to date.
 
-![PomDependencyChecker](https://img4.hostingpics.net/pics/939274Capturedecran20170817a215222.png)
+![PomDependencyChecker](https://img4.hostingpics.net/pics/754019Capturedecran20170818a182029.png)
 
 ### Licence ######
 
