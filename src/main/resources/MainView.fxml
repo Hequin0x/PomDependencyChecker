@@ -5,13 +5,14 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sulgaming.pomdependencychecker.Controller">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sulgaming.pomdependencychecker.Controller">
    <children>
-      <Button fx:id="chooseFileButton" layoutX="203.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="195.0" text="Choose a pom file" />
-      <Separator layoutX="8.0" layoutY="67.0" prefHeight="4.0" prefWidth="585.0" />
-      <TableView fx:id="dependenciesTable" layoutY="72.0" prefHeight="328.0" prefWidth="600.0">
+      <Button fx:id="chooseFileButton" layoutX="203.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" text="Choose a pom file" AnchorPane.leftAnchor="180" AnchorPane.rightAnchor="180" AnchorPane.topAnchor="14.0" />
+       <ProgressBar fx:id="progressIndicator" layoutX="14.0" prefHeight="20.0" progress="0.0" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="47.0" />
+      <Separator layoutX="8.0" prefHeight="4.0" AnchorPane.leftAnchor="5" AnchorPane.rightAnchor="5" AnchorPane.topAnchor="67.0" />
+      <TableView fx:id="dependenciesTable" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="72.0">
         <columns>
           <TableColumn fx:id="groupIdColumn" prefWidth="143.0" text="Group ID" />
           <TableColumn fx:id="artifactIdColumn" minWidth="7.0" prefWidth="107.0" text="Artifact ID" />
@@ -22,6 +23,5 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <ProgressBar fx:id="progressIndicator" layoutX="14.0" layoutY="47.0" prefHeight="20.0" prefWidth="575.0" progress="0.0" />
    </children>
-</Pane>
+</AnchorPane>
