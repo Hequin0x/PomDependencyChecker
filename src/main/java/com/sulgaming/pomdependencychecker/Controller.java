@@ -30,6 +30,8 @@ public class Controller {
     private ObservableList<DependencyCheck> dependencyChecks = FXCollections.observableArrayList();
 
     @FXML
+    public Button chooseFileButton;
+    @FXML
     public ProgressBar progressIndicator;
     @FXML
     public TableView<DependencyCheck> dependenciesTable;
@@ -74,8 +76,6 @@ public class Controller {
 
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException, XmlPullParserException {
-        this.dependencyChecks.clear();
-
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Pom File");
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("XML Files(*.xml)", "*.xml"));
@@ -92,11 +92,15 @@ public class Controller {
                         @Override
                         protected Void call() throws Exception {
                             parsePomFile(pomFile);
+                            chooseFileButton.setDisable(false);
                             return null;
                         }
                     };
                 }
             };
+
+            this.chooseFileButton.setDisable(true);
+            this.dependencyChecks.clear();
 
             parseService.start();
         }
